@@ -25,7 +25,7 @@ public class Main {
         //System.out.println(cleanedStr);
 
         //ВСЕ ГОТОВО К ОБРАБОТКЕ
-        // Создаем Set для хранения уникальных слов
+        // Создаём Set для хранения уникальных слов
         Set<String> uniqueWords = new HashSet<>();
 
         // Создаем Map для хранения слов и их количества
@@ -35,8 +35,8 @@ public class Main {
 
         // Добавляем каждое слово в Set
         for (String word : words) {
-            uniqueWords.add(word); //для полсчета колва слов
-            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1); //для создания Map
+            uniqueWords.add(word.toLowerCase()); //для подсчета колва слов
+            wordCountMap.put(word.toLowerCase(), wordCountMap.getOrDefault(word, 0) + 1); //для создания Map
         }
         System.out.println("2.1 Количество слов = " + uniqueWords.size());
         //System.out.println("Частота слов: " + wordCountMap);
@@ -54,6 +54,7 @@ public class Main {
         }
         // Создаем TreeMap для хранения количества повторений и соответствующих слов
         TreeMap<Integer, List<String>> frequencyMap = new TreeMap<>(Collections.reverseOrder());
+
 
         // Заполняем frequencyMap
         for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
